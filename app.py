@@ -11,6 +11,7 @@ st.set_page_config(page_title='Analise de dados', page_icon=':bar_chart')
 st.title("Análise de dados")
 st.write("Esta página tem como objetivo mostrar a analise dos dados de arquivos csv")
 
+dados = pd.read_csv("Portuguese.csv")
 
 st.write("Dataset de Português")
 st.dataframe(dados)  # comando q aparece toda a tabela
