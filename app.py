@@ -10,11 +10,15 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title='Analise de dados', page_icon=':bar_chart')
 st.title("Análise de dados")
 st.write("Esta página tem como objetivo mostrar a analise dos dados de arquivos csv")
-
 dados = pd.read_csv("Portuguese.csv")
 
+dadosM = pd.read_csv("Maths.csv")
 
+
+st.write("Dataset de Português")
 st.dataframe(dados)  # comando q aparece toda a tabela
+
+
 
 # grafico fem X masculino
 genero_fem = dados.age.loc[dados.sex == 'F'].value_counts()
@@ -52,3 +56,5 @@ def get_dataset(dataset_name):
 X, y = get_dataset(dataset_name)
 st.write("shape of dataset", X.shape)
 st.write("number of classes", len(np.unique(y)))
+
+st.dataframe(dadosM)
